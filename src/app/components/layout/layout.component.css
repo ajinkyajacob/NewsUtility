@@ -1,0 +1,12 @@
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.layout {
+  height: 80%;
+  display: grid;
+  align-content: space-around;
+}
