@@ -58,9 +58,9 @@ export class LayoutComponent {
     return new FormGroup({
       q: new FormControl(''),
       country: new FormControl('in'),
-      range: new FormGroup({
-        to: new FormControl(new Date()),
-        from: new FormControl(new Date()),
+      range: new FormControl<{ to: Date; from: Date }>({
+        to: new Date(),
+        from: new Date(),
       }),
     });
   });

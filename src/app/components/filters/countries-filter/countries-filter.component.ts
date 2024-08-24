@@ -96,6 +96,8 @@ export class CountriesFilterComponent implements ControlValueAccessor {
   allCountriesSignal = inject(AllCountries);
 
   filteredCountriesSignal = computed(() => {
+    const allCountries = this.allCountriesSignal();
+    if (!allCountries.length) return [];
     const value = this.myControlSignal();
     console.log('value', value);
     let filterValue = '';

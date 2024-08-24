@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { JsonPipe } from '@angular/common';
 import { Component, effect, forwardRef } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import {
@@ -23,15 +22,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
-    JsonPipe,
   ],
   providers: [
-    provideNativeDateAdapter(),
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => DateRangeFilterComponent),
       multi: true,
     },
+    provideNativeDateAdapter(),
   ],
   template: `
     @if (range; as range) {

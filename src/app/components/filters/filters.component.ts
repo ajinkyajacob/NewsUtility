@@ -54,10 +54,7 @@ export class FiltersComponent {
     FormGroup<{
       q: FormControl<string | null>;
       country: FormControl<string | null>;
-      range: FormGroup<{
-        from: FormControl<Date | null>;
-        to: FormControl<Date | null>;
-      }>;
+      range: FormControl<{ to: Date; from: Date } | null>;
     }>
   >();
 
