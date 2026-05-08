@@ -11,5 +11,13 @@ export const newsApiTokenInterceptorInterceptor: HttpInterceptorFn = (
     //  headers: req.headers.set('X-Api-Key', token),
      params: req.params.set('apiKey', token)
     });
-  return next(clonedReq);
+  return next(clonedReq).pipe(
+    catchError((e) => {
+      return {
+        "status": "fail",
+        "totalResults": 0,
+        "articles": []
+      }
+    })
+  );
 };
