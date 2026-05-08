@@ -12,15 +12,16 @@ export class NewsApiService {
 
   getHeadlines(ops: NewsApi.HeadLines.Options) {
     return this.http.get<NewsApi.HeadLines.Responce>(
-      `${this.baseUrl}/v2/top-headlines`,
-      { params: ops as never },
+      `${this.baseUrl}`,
+      { params: {...ops as never, endpoint: 'v2/top-headlines'} },
+
     );
   }
 
   getEverything(ops: NewsApi.Everything.Options) {
     return this.http.get<NewsApi.Everything.Responce>(
-      `${this.baseUrl}/v2/everything`,
-      { params: ops as never },
+      `${this.baseUrl}`,
+      { params: {...ops as never, endpoint: 'v2/everything'} },
     );
   }
 }

@@ -26,7 +26,7 @@ export function provideApiToken(): EnvironmentProviders {
     {
       provide: BaseUrl,
       useFactory: () => {
-        return `https://newsapi.org`;
+        return `/api/news`;
       },
       deps: [NewsApiToken],
     },
