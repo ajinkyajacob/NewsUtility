@@ -13,7 +13,7 @@ export class NewsApiService {
   getHeadlines(ops: NewsApi.HeadLines.Options) {
     return this.http.get<NewsApi.HeadLines.Responce>(
       `${this.baseUrl}`,
-      { params: {...ops as never, endpoint: 'v2/top-headlines'} },
+      { params: {...ops, endpoint: 'v2/top-headlines'} },
 
     );
   }
@@ -21,7 +21,7 @@ export class NewsApiService {
   getEverything(ops: NewsApi.Everything.Options) {
     return this.http.get<NewsApi.Everything.Responce>(
       `${this.baseUrl}`,
-      { params: {...ops as never, endpoint: 'v2/everything'} },
+      { params: {...ops, endpoint: 'v2/everything'} },
     );
   }
 }
