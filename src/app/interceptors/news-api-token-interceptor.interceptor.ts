@@ -1,6 +1,7 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { NewsApiToken } from '../news-utility.token';
+import { catchError} from 'rxjs/operators';
 
 export const newsApiTokenInterceptorInterceptor: HttpInterceptorFn = (
   req,
