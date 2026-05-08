@@ -7,6 +7,9 @@ export const newsApiTokenInterceptorInterceptor: HttpInterceptorFn = (
   next,
 ) => {
   const token = inject(NewsApiToken);
-  const clonedReq = req.clone({ headers: req.headers.set('X-Api-Key', token), params: req.params.set('apiKey', token)});
+  const clonedReq = req.clone({
+    //  headers: req.headers.set('X-Api-Key', token),
+     params: req.params.set('apiKey', token)
+    });
   return next(clonedReq);
 };
