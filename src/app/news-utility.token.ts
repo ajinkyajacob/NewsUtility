@@ -40,7 +40,7 @@ export function provideApiToken(): EnvironmentProviders {
         }
         return toSignal(
           http
-            .get('https://restcountries.com/v3.1/all')
+            .get('https://restcountries.com/v3.1/all?fields=name,cca2')
             .pipe(
               tap((data) =>
                 localStorage.setItem('AllCountries', JSON.stringify(data)),
